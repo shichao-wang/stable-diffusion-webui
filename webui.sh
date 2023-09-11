@@ -5,11 +5,6 @@
 #################################################
 
 
-use_venv=1
-if [[ $venv_dir == "-" ]]; then
-  use_venv=0
-fi
-
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
@@ -26,6 +21,11 @@ fi
 if [[ -f "$SCRIPT_DIR"/webui-user.sh ]]
 then
     source "$SCRIPT_DIR"/webui-user.sh
+fi
+
+use_venv=1
+if [[ $venv_dir == "-" ]]; then
+  use_venv=0
 fi
 
 # Set defaults
